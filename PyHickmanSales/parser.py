@@ -2,9 +2,9 @@ from typing import TypeVar, Union, Optional, List
 
 import requests
 
-from .enums import Category, VehicleType, Location
+from .enums import Category, VehicleType
 
-BASE_URL = "http://www.hickmangroup.ca/VehicleSearchResults"
+BASE_URL = "http://www.hickmanchev.ca/VehicleSearchResults"
 
 T = TypeVar("T")
 Parameter = Union[List[T], T]
@@ -19,14 +19,13 @@ def process_parameter(param: Parameter[T]) -> Optional[Union[str, T]]:
         return param
 
 
-def get_listings(*, category: Parameter[Category] = None, vehicle_type: Parameter[VehicleType] = None, make: Parameter[str] = None, model: Parameter[str] = None, year: Parameter[int] = None, location: Parameter[Location] = None, **kwargs):
+def get_listings(*, category: Parameter[Category] = None, vehicle_type: Parameter[VehicleType] = None, make: Parameter[str] = None, model: Parameter[str] = None, year: Parameter[int] = None, **kwargs):
     params = {
         "search": process_parameter(category),
         "bodyType": process_parameter(vehicle_type),
         "make": process_parameter(make),
         "model": process_parameter(model),
         "year": process_parameter(year),
-        "location": process_parameter(location),
         "limit": 10000
     }
     params.update(kwargs)
