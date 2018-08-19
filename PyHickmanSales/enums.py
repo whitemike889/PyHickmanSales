@@ -1,7 +1,4 @@
-import enum
-
-
-class Locations(enum.Enum):
+class Location:
     """
     All Hickman Automotive Group dealerships.
     """
@@ -17,7 +14,7 @@ class Locations(enum.Enum):
     SELECT = "motp-hickman-inv1"
 
 
-class Category(enum.Enum):
+class Category:
     """
     Categories of vehicles sold.
     """
@@ -26,7 +23,7 @@ class Category(enum.Enum):
     USED = "preowned"
 
 
-class VehicleType(enum.Enum):
+class VehicleType:
     """
     Types of vehicles sold.
     """
