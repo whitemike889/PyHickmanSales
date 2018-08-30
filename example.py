@@ -25,3 +25,8 @@ for car in cars:
 
 average = float(total)/len(cars)
 print(f"Average price for a blue vehicle: ${average}")
+
+# Gets the total value of all the listed vehicles
+cars = get_listings()
+total = sum([car.msrp for car in cars])
+print(f"Total value of all vehicles: ${total}")
