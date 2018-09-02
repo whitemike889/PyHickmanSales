@@ -47,7 +47,7 @@ def get_listings(*, category: Parameter[Category] = None, vehicle_type: Paramete
         "limit": 10000
     }
     params.update(kwargs)
-    listings = requests.get(BASE_URL, params=params)
+    listings = requests.get(BASE_URL, params=params, headers={"User-Agent": "PyHickmanSales V1.1.0 (https://github.com/nint8835/PyHickmanSales)"})
 
     # Create a tree from the page and find the table containing the vehicles
     tree = html.fromstring(listings.content)
