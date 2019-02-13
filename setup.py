@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="PyHickmanSales",
-    version="1.1.0",
+    version="1.2.0",
     packages=["PyHickmanSales", ],
     license="MIT",
     description="Library providing access to sales listings from Hickman Chevrolet Cadillac",

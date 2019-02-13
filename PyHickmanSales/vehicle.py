@@ -20,7 +20,8 @@ class Vehicle:
     @staticmethod
     def _process_price(price: str) -> Optional[int]:
         """
-        Processes the price string from the data-params object into a more usable form
+        Processes the price string from the data-params object into a more usable form.
+
         :param price: The price string
         :return: The int value of the price if it is able to be processed, otherwise None
         """
@@ -41,3 +42,9 @@ class Vehicle:
         self.colour = colour
         self.stock_number = stock_number
         self.url = url
+
+    def __str__(self):
+        return "{} {} {} {}".format(self.year, self.make, self.model, self.trim)
+
+    def __repr__(self):
+        return f"PyHickmanSales.vehicle.Vehicle({', '.join(str(i) for i in [self.make, self.model, self.trim, self.vin, self.year, self.msrp, self.price, self.colour, self.stock_number, self.url])})"
