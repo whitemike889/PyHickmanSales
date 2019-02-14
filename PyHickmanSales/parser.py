@@ -20,7 +20,7 @@ def _process_parameter(param: Parameter[T]) -> Optional[Union[str, T]]:
     """
     if not param:
         return None
-    if isinstance(param, list):
+    if isinstance(param, list) or isinstance(param, tuple):
         return ",".join(param)
     else:
         return param
